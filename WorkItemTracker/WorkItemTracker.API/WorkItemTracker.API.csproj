@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\WorkItemTracker.Application\WorkItemTracker.Application.csproj" />
+    <ProjectReference Include="..\WorkItemTracker.Domain\WorkItemTracker.Domain.csproj" />
   </ItemGroup>
 
 </Project>
