@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkItemTracker.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef2952570b0345dba41b4475fd09a4fcddc61ae1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f053ddf70498b64b4b45c36fe2fe7a24bfbb9afc")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkItemTracker.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkItemTracker.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

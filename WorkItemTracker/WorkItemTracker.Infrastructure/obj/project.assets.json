@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "WorkItemTracker.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "WorkItemTracker.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WorkItemTracker.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkItemTracker.Application.dll": {}
+        }
+      },
+      "WorkItemTracker.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/WorkItemTracker.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WorkItemTracker.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "WorkItemTracker.Application/1.0.0": {
+      "type": "project",
+      "path": "../WorkItemTracker.Application/WorkItemTracker.Application.csproj",
+      "msbuildProject": "../WorkItemTracker.Application/WorkItemTracker.Application.csproj"
+    },
+    "WorkItemTracker.Domain/1.0.0": {
+      "type": "project",
+      "path": "../WorkItemTracker.Domain/WorkItemTracker.Domain.csproj",
+      "msbuildProject": "../WorkItemTracker.Domain/WorkItemTracker.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "WorkItemTracker.Application >= 1.0.0",
+      "WorkItemTracker.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Koket\\.nuget\\packages\\": {},
@@ -38,7 +76,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Koket\\Desktop\\assessment\\work_item_tracker\\WorkItemTracker\\WorkItemTracker.Application\\WorkItemTracker.Application.csproj": {
+              "projectPath": "C:\\Users\\Koket\\Desktop\\assessment\\work_item_tracker\\WorkItemTracker\\WorkItemTracker.Application\\WorkItemTracker.Application.csproj"
+            },
+            "C:\\Users\\Koket\\Desktop\\assessment\\work_item_tracker\\WorkItemTracker\\WorkItemTracker.Domain\\WorkItemTracker.Domain.csproj": {
+              "projectPath": "C:\\Users\\Koket\\Desktop\\assessment\\work_item_tracker\\WorkItemTracker\\WorkItemTracker.Domain\\WorkItemTracker.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
