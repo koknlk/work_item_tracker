@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkItemTracker.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+361aed21d771328a605759d014ee9290123dfd39")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+703e48c772db92d918fd8e6673a05bea81a6c936")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkItemTracker.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkItemTracker.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
