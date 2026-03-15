@@ -10,61 +10,70 @@ namespace WorkItemTracker.Application.Services
     {
     public class WorkItemService
         {
-        private readonly IWorkItemRepository _repo;
+        private readonly IWorkItemRepository _repository;
 
-        public WorkItemService(IWorkItemRepository repo)
-            => _repo = repo;
-
-        public IEnumerable<WorkItem> GetAll(string status = null, string sort = null)
+        public WorkItemService(IWorkItemRepository repository)
             {
-            var items = _repo.GetAll();
+            _repository = repository;
+            }
+
+        public IEnumerable<WorkItem> GetAll(string status, string sort)
+            {
+            var items = _repository.GetAll();
+
             return WorkItemFilter.Apply(items, status, sort);
             }
 
         public WorkItem GetById(Guid id)
             {
-            var item = _repo.GetById(id);
-            if (item == null) throw new WorkItemNotFoundException(id);
+            var item = _repository.GetById(id);
+
+            if (item == null)
+                throw new WorkItemNotFoundException(id);
+
             return item;
             }
 
         public WorkItemSummaryDto GetSummary(Guid id)
-            => WorkItemMapper.ToSummaryDto(GetById(id));
+            {
+            var item = GetById(id);
+
+            return WorkItemMapper.ToSummaryDto(item);
+            }
 
         public WorkItem Create(CreateWorkItemDto dto)
             {
-            if (!Enum.TryParse<WorkStatus>(dto.Status, out var status))
-                throw new InvalidWorkStatusException(dto.Status);
+            var title = dto.Title.Trim();
+            var description = dto.Description?.Trim();
 
-            var workItem = new WorkItem
-                {
-                Title = dto.Title,
-                Description = dto.Description,
-                Status = status
-                };
+            var item = new WorkItem(title, description);
 
-            return _repo.Add(workItem);
+            return _repository.Add(item);
             }
 
         public WorkItem Update(Guid id, UpdateWorkItemDto dto)
             {
-            var existing = GetById(id);
+            var item = GetById(id);
 
-            if (!Enum.TryParse<WorkStatus>(dto.Status, out var status))
-                throw new InvalidWorkStatusException(dto.Status);
+            if (!Enum.TryParse<WorkStatus>(dto.Status, true, out var parsedStatus))
+                throw new ArgumentException("Invalid status");
 
-            existing.Title = dto.Title;
-            existing.Description = dto.Description;
-            existing.Status = status;
+            item.Update(
+                dto.Title.Trim(),
+                dto.Description?.Trim(),
+                parsedStatus
+            );
 
-            _repo.Update(existing);
-            return existing;
+            _repository.Update(item);
+
+            return item;
             }
 
         public void Delete(Guid id)
             {
-            var existing = GetById(id);
-            _repo.Delete(id);
+            var item = GetById(id);
+
+            _repository.Delete(item.Id);
             }
         }
     }

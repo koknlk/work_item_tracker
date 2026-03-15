@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkItemTracker.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f053ddf70498b64b4b45c36fe2fe7a24bfbb9afc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+897f19fb333827e0a249c3986b97e1c06f63411a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkItemTracker.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkItemTracker.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

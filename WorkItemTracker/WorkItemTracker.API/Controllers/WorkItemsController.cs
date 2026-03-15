@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WorkItemTracker.Application.DTOs;
 using WorkItemTracker.Application.Services;
@@ -14,33 +13,53 @@ namespace WorkItemTracker.API.Controllers
         {
         private readonly WorkItemService _service;
 
-        public WorkItemsController(WorkItemService service) => _service = service;
+        public WorkItemsController(WorkItemService service)
+            {
+            _service = service;
+            }
 
         [HttpGet]
-        public ActionResult<IEnumerable<WorkItem>> GetAll([FromQuery] string status = null, [FromQuery] string sort = null)
-            => Ok(_service.GetAll(status, sort));
+        public ActionResult<IEnumerable<WorkItem>> GetAll(
+            [FromQuery] string status,
+            [FromQuery] string sort)
+            {
+            var result = _service.GetAll(status, sort);
+            return Ok(result);
+            }
 
         [HttpGet("{id:guid}")]
-        public ActionResult<WorkItem> GetById(Guid id) => Ok(_service.GetById(id));
+        public ActionResult<WorkItem> GetById(Guid id)
+            {
+            return Ok(_service.GetById(id));
+            }
 
         [HttpGet("{id:guid}/summary")]
-        public ActionResult<WorkItemSummaryDto> GetSummary(Guid id) => Ok(_service.GetSummary(id));
+        public ActionResult<WorkItemSummaryDto> GetSummary(Guid id)
+            {
+            return Ok(_service.GetSummary(id));
+            }
 
         [HttpPost]
         public ActionResult<WorkItem> Create([FromBody] CreateWorkItemDto dto)
             {
-            var created = _service.Create(dto);
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+            var item = _service.Create(dto);
+
+            return CreatedAtAction(nameof(GetById),
+                new { id = item.Id },
+                item);
             }
 
         [HttpPut("{id:guid}")]
         public ActionResult<WorkItem> Update(Guid id, [FromBody] UpdateWorkItemDto dto)
-            => Ok(_service.Update(id, dto));
+            {
+            return Ok(_service.Update(id, dto));
+            }
 
         [HttpDelete("{id:guid}")]
         public IActionResult Delete(Guid id)
             {
             _service.Delete(id);
+
             return NoContent();
             }
         }

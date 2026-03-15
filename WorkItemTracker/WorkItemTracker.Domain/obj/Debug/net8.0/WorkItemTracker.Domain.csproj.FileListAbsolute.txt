@@ -1,0 +1,12 @@
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\bin\Debug\net8.0\WorkItemTracker.Domain.deps.json
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\bin\Debug\net8.0\WorkItemTracker.Domain.dll
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\bin\Debug\net8.0\WorkItemTracker.Domain.pdb
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\WorkItemTracker.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\WorkItemTracker.Domain.AssemblyInfoInputs.cache
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\WorkItemTracker.Domain.AssemblyInfo.cs
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\WorkItemTracker.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\WorkItemTracker.Domain.sourcelink.json
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\WorkItemTracker.Domain.dll
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\refint\WorkItemTracker.Domain.dll
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\WorkItemTracker.Domain.pdb
+C:\Users\Koket\Desktop\assessment\work_item_tracker\WorkItemTracker\WorkItemTracker.Domain\obj\Debug\net8.0\ref\WorkItemTracker.Domain.dll

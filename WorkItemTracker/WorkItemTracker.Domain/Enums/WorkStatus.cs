@@ -8,8 +8,8 @@ namespace WorkItemTracker.Domain.Enums
     {
     public enum WorkStatus
         {
-        Todo,
-        InProgress,
-        Done
+        New = 0,
+        Active = 1,
+        Completed = 2
         }
     }

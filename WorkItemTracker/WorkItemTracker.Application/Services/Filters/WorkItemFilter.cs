@@ -3,16 +3,22 @@ using WorkItemTracker.Domain.Enums;
 
 namespace WorkItemTracker.Application.Services.Filters
     {
-    public class WorkItemFilter
+    public static class WorkItemFilter
         {
-        public static IEnumerable<WorkItem> Apply(IEnumerable<WorkItem> items, string status, string sort)
+        public static IEnumerable<WorkItem> Apply(
+            IEnumerable<WorkItem> items,
+            string status,
+            string sort)
             {
-            if (!string.IsNullOrWhiteSpace(status) && Enum.TryParse<WorkStatus>(status, out var s))
-                items = items.Where(x => x.Status == s);
-
-            items = sort switch
+            if (!string.IsNullOrWhiteSpace(status) &&
+                Enum.TryParse<WorkStatus>(status, true, out var parsedStatus))
                 {
-                    "date" => items.OrderByDescending(x => x.CreationDate),
+                items = items.Where(x => x.Status == parsedStatus);
+                }
+
+            items = sort?.ToLower() switch
+                {
+                    "date" => items.OrderByDescending(x => x.CreatedAt),
                     _ => items
                     };
 
