@@ -57,7 +57,7 @@ work_item_tracker/
 │ ├─ types/
 │ └─ hooks/
 ├─ docker-compose.yaml
-└─ README.md ```
+└─ README.md 
 ---
 
 ## Getting Started
