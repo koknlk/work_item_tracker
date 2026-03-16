@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./WorkItemTracker          # parent folder with .sln
+      dockerfile: WorkItemTracker.API/Dockerfile
+    container_name: workitem-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  frontend:
+    build:
+      context: ./workitemtracker-frontend
+    container_name: workitem-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:5000/api/v1
+    depends_on:
+      - backend

@@ -144,31 +144,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WorkItemTracker.API.Controllers.WorkItemsController",
-    "Method": "GetSummary",
-    "RelativePath": "api/v1/workitems/{id}/summary",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "WorkItemTracker.Application.DTOs.WorkItemSummaryDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   }
 ]

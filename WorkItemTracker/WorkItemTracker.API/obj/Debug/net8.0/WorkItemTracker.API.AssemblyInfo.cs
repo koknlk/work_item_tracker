@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("a62b1743-6998-441d-93c4-9466e64f9e0f")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkItemTracker.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+897f19fb333827e0a249c3986b97e1c06f63411a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7ed6d1d8680b31b91374fdba4fb0d79607a19e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkItemTracker.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkItemTracker.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

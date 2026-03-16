@@ -10,6 +10,8 @@ namespace WorkItemTracker.Domain.Entities
         public WorkStatus Status { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
+        public List<SubTask> Subtasks { get; private set; } = new();
+
         public WorkItem(string title, string description)
             {
             if (string.IsNullOrWhiteSpace(title))
@@ -18,7 +20,7 @@ namespace WorkItemTracker.Domain.Entities
             Id = Guid.NewGuid();
             Title = title;
             Description = description;
-            Status = WorkStatus.New;
+            Status = WorkStatus.Open;
             CreatedAt = DateTime.UtcNow;
             }
 

@@ -33,12 +33,6 @@ namespace WorkItemTracker.API.Controllers
             return Ok(_service.GetById(id));
             }
 
-        [HttpGet("{id:guid}/summary")]
-        public ActionResult<WorkItemSummaryDto> GetSummary(Guid id)
-            {
-            return Ok(_service.GetSummary(id));
-            }
-
         [HttpPost]
         public ActionResult<WorkItem> Create([FromBody] CreateWorkItemDto dto)
             {

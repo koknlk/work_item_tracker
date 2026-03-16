@@ -1,7 +1,6 @@
 ﻿using WorkItemTracker.Application.Contracts;
 using WorkItemTracker.Application.DTOs;
 using WorkItemTracker.Application.Exceptions;
-using WorkItemTracker.Application.Mappers;
 using WorkItemTracker.Application.Services.Filters;
 using WorkItemTracker.Domain.Entities;
 using WorkItemTracker.Domain.Enums;
@@ -32,13 +31,6 @@ namespace WorkItemTracker.Application.Services
                 throw new WorkItemNotFoundException(id);
 
             return item;
-            }
-
-        public WorkItemSummaryDto GetSummary(Guid id)
-            {
-            var item = GetById(id);
-
-            return WorkItemMapper.ToSummaryDto(item);
             }
 
         public WorkItem Create(CreateWorkItemDto dto)

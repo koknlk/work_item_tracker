@@ -8,19 +8,20 @@ using WorkItemTracker.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add controllers
 builder.Services.AddControllers();
 
-// Dependency Injection
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5000);
+});
+
 builder.Services.AddSingleton<IWorkItemRepository, InMemoryWorkItemRepository>();
 builder.Services.AddScoped<WorkItemService>();
 
-// JWT configuration from appsettings
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings["SecretKey"];
 var expiryHours = int.Parse(jwtSettings["ExpiryHours"] ?? "1");
 
-// Configure JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -28,7 +29,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.RequireHttpsMetadata = true; // enforce TLS
+    //options.RequireHttpsMetadata = true;
     options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
         {
@@ -42,7 +43,6 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
-//CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendDevPolicy", policy =>
@@ -53,13 +53,11 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Middleware
 app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseSwagger();

@@ -253,46 +253,6 @@
           }
         }
       }
-    },
-    "/api/v1/workitems/{id}/summary": {
-      "get": {
-        "tags": [
-          "WorkItems"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/WorkItemSummaryDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/WorkItemSummaryDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/WorkItemSummaryDto"
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
@@ -327,6 +287,19 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubTask": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "isCompleted": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -379,36 +352,25 @@
             "type": "string",
             "format": "date-time",
             "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "WorkItemSummaryDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
           },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
+          "subtasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubTask"
+            },
+            "nullable": true,
+            "readOnly": true
           }
         },
         "additionalProperties": false
       },
       "WorkStatus": {
         "enum": [
-          0,
-          1,
-          2
+          "Open",
+          "InProgress",
+          "Closed"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       }
     }
   }

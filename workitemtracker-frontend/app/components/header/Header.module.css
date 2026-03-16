@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navButton,
+.logoutButton {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.navButton {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.navButton:hover {
+  background-color: #2563eb;
+}
+
+.logoutButton {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.logoutButton:hover {
+  background-color: #b91c1c;
+}
