@@ -11,7 +11,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if (token === null) {
-      setLoading(true); 
+      router.push('/login'); 
     } else if (!token) {
       router.push('/login'); 
     } else {
