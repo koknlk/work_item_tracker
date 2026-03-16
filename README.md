@@ -42,7 +42,7 @@ A full-stack Work Item Tracker application with .NET 8 backend and Next.js 13/14
 
 ---
 
-## Folder Structure
+## Folder Structure 
 
 work_item_tracker/
 ├─ WorkItemTracker/ # Backend solution
@@ -57,9 +57,7 @@ work_item_tracker/
 │ ├─ types/
 │ └─ hooks/
 ├─ docker-compose.yaml
-└─ README.md
-
-
+└─ README.md 
 ---
 
 ## Getting Started
